@@ -27,7 +27,7 @@ Feature: Specialities Page
     Then User should navigate to the doctor specification page
     When User selects a particular date
     Then Corresponding available slots should be display to the user
-    When User clicks on the slots
+    When User clicks on the available slots
     Then User can view the "<message>"
 
     Examples:
@@ -41,8 +41,8 @@ Feature: Specialities Page
     Given User is on the "home" page
     When User clicks on doctor card
     Then User should navigate to the doctor specification page
-    When User clicks on specialities
-    Then Doctor specialities should be display to the user
+    When User clicks on specialities tab
+    Then User will be able to see doctor specialities
 
 
     # //-------------------------------------------------------------------------------
@@ -51,8 +51,8 @@ Feature: Specialities Page
     Given User is on the "home" page
     When User clicks on doctor card
     Then User should navigate to the doctor specification page
-    When User clicks on qualification
-    Then Doctor qualification should be display to the user
+    When User clicks on qualification tab
+    Then User will be able to see doctor qualification
 
     # //---------------------------------------------------------------------------------
 
@@ -60,7 +60,7 @@ Feature: Specialities Page
     Given User is on the "home" page
     When User clicks on doctor card
     Then User should navigate to the doctor specification page
-    When User clicks on write a review
+    When User clicks on write a review tab
     Then Rating and write a review field should be display
     When User selects Rating
     And User writes review in review input field
@@ -75,7 +75,7 @@ Feature: Specialities Page
     Then User should navigate to the doctor specification page
     When User selects a particular date
     Then Corresponding available slots should be display to the user
-    When User clicks on the slots
+    When User clicks on the available slots
     Then User has to sign in to book an appointment
     When User clicks on sign in link
     Then User should navigate to the sign up page

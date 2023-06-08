@@ -35,7 +35,7 @@ Then('Corresponding available slots should be display to the user',()=>{
     
 });
 
-When('User clicks on the slots',(slot)=>{
+When('User clicks on the available slots',(slot)=>{
     doctorPage.getSlot(slot)
 });
 
@@ -43,23 +43,23 @@ Then('User can view the {string}',(Message)=>{
     doctorPage.getMessage(Message)
 });
 
-When('User clicks on specialities',(doctorSpecialitie)=>{
+When('User clicks on specialities tab',(doctorSpecialitie)=>{
     doctorPage.getDoctorSpecialitie(doctorSpecialitie)
 });
 
-Then('Doctor specialities should be display to the user',()=>{
+Then('User will be able to see doctor specialities',()=>{
     
 });
 
-When('User clicks on qualification',(doctorQualification)=>{
+When('User clicks on qualification tab',(doctorQualification)=>{
     doctorPage.getDoctorQualification(doctorQualification)
 });
 
-Then('Doctor qualification should be display to the user',()=>{
+Then('User will be able to see doctor qualification',()=>{
 
 });
 
-When('User clicks on write a review',(Review)=>{
+When('User clicks on write a review tab',(Review)=>{
     doctorPage.getReview(Review)
 });
 
