@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('Login', (email, password) => {
+    cy.visit("/");
+    cy.get(".MuiButton-label").click();
+    cy.get("#emailOrMobile").type("simran258@gmail.com");
+    cy.get("#password").type("simRan@123");
+    cy.get(".MuiButton-label:last()").click();
+});
+    

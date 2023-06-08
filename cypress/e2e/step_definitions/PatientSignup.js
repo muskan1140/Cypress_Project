@@ -1,61 +1,24 @@
-import {
-    Given,
-    When,
-    Then,
-} from "@badeball/cypress-cucumber-preprocessor";
-import { registerpage } from "@pages/PatientSignupPage";
+import {Given, When, Then,} from "@badeball/cypress-cucumber-preprocessor";
 
-Given ("User is on Doctor landing page",() => {
-    registerpage.visit()
+import PatientPageObject from "cypress/PageObject/PatientSignupPageObject";
+const PatientPage = new PatientPageObject();
+
+When('User selects {string} {string} {string} in the dob select field',(date,month,year)=>{
+    PatientPage.getDate(date)
+    PatientPage.getMonth(month)
+    PatientPage.getYear(year)
+
 });
 
-When ('User clicks on "Patient Sign up"', ()=> {
-    registerpage.getLoginin()
+Then('User can view message {string}',()=>{
+
 });
 
-Then ('patient signup window occur',() => {
-    registerpage.getSignin()
+Then('User can view the  {string} message',(errorMessage)=>{
+    PatientPage.getErrorMessage(errorMessage)
 });
 
-When ('User enters "Fullname" in name input field',() => {
-    registerpage.getFullname()
+Then('User enters the {string} in mobile input field',(errorNumber)=>{
+    PatientPage.getErrorNumber(errorNumber)
 });
-
-When ('User selects the {string} gender' , (string) =>{
-    if(string == 'gender'){
-        registerpage.getGender()
-    }
-    else if(string == 'DOB')
-    {
-        registerpage.getDOB()
-    }else{
-        registerpage.getMobileNum()
-    }
-})
-
-When ('User enters the "date of birth" in DOB input field',() =>{
-    registerpage.getDOB()
-});
-
-When('User enters the "Mobile Number" in Mobile number input field',() => {
-    registerpage.getMobileNum()
-});
-
-When('User enters the "Email" in Email input field', () => {
-    registerpage.getEmail()
-});
-
-When('User creates "Password" in create password input field',() => {
-    registerpage.getPassword()
-});
-
-When ('User re enters the "Password" in confirm password input field',() => {
-    registerpage.getConfirmPassword()
-});
-
-Then('User Enters the "register" register button', () => {
-    registerpage.getbutton()
-});
-
-    
 

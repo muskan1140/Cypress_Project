@@ -1,30 +1,31 @@
-const element = '[href="/auth/login"]'
-const element1= '#emailOrMobile'
-const element2= '#password'
-const element3='.jss21 > .MuiButtonBase-root > .MuiButton-label'
+const loginButton = 'div .MuiButtonBase-root:eq(1)'
+const emailField ='div #emailOrMobile'
+const passwordField= 'div #password'
+const submitButton ='div .MuiButtonBase-root:eq(5)'
+const errorMessage='div .MuiAlert-message'
 
 
-class LoginPage {
+class loginPage{
 
-  getElement(){
-    return cy.get(element)
+  getLoginButton(){
+    return cy.get(loginButton)
   }
 
-  getElement1(){
-    return cy.get(element1)
+  getEmailField(){
+    return cy.get(emailField)
   }
 
-  getElement2(){
-    return cy.get(element2)
+  getPasswordField(){
+    return cy.get(passwordField)
   }
 
-  getElement3(){
-    return cy.get(element3)
+  getSubmitButton(){
+    return cy.get(submitButton)
   }
-
-
   
-
+  getErrorMessage(){
+    return cy.get(errorMessage)
+  }
 }
 
-export const loginPage = new LoginPage();
+export default loginPage;

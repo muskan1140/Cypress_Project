@@ -1,66 +1,67 @@
-import helpers from "cypress/Helpers/functions"
-const Helpers = new helpers();
-class RegisterPage{
-    visit(){
-        cy.visit("/auth/login")
-    }
+const nameField = 'div #full_name'
+const genderType = 'div .MuiButtonBase-root:eq(5)'
+const date = 'div #dropdown-day select'
+const month = 'div #dropdown-month select'
+const year = 'div #dropdown-year  select'
+const mobileNum= 'div #mobile_number'
+const email='div #email_address'
+const password = 'div #password'
+const confirmPassword ='div #confirm_password'
+const register = 'div .MuiButtonBase-root:last'
+const errorMessage = 'div p'
+const errorNumber = 'div #mobile_number'
 
-    getLoginin(){
-        // cy.get('.MuiButton-label:eq(0)').should('be.visible')
-        // cy.get('.MuiButton-label:eq(0)').click()
-        Helpers.visible('.MuiButton-label:eq(0)')
-        Helpers.click('.MuiButton-label:eq(0)')
-    }
 
-    getSignin(){
-        // cy.get('.MuiTab-wrapper:eq(1)').should('be.visible')
-        // cy.get('.MuiTab-wrapper:eq(1)').click()
-        Helpers.visible('.MuiTab-wrapper:eq(1)')
-        Helpers.click('.MuiTab-wrapper:eq(1)')
-    }
 
-    getFullname(){
-        // cy.get('#full_name').type('Muskan')
-        Helpers.type('#full_name' , 'Muskan')
+class PatientPage {
+    getName(){
+        return cy.get(nameField)
     }
 
     getGender(){
-        // cy.get('.MuiTypography-root:eq(3)').click()
-        Helpers.click('.MuiTypography-root:eq(3)')
+        return cy.get(genderType)
     }
 
-    getDOB(){
-        cy.get('#dropdown-day  select').select('4');
-        cy.get('#dropdown-month  select').select('May');
-        cy.get('#dropdown-year select').select('2000');
-        
+    getDate(){
+        return cy.get(date)
+    }
+
+    getMonth(){
+        return cy.get(month)
+    }
+
+    getYear(){
+        return cy.get(year)
     }
 
     getMobileNum(){
-        cy.get('#mobile_number').type(Helpers.getRandom(10))
+        return cy.get(mobileNum)
     }
 
     getEmail(){
-        // cy.get('#email_address').type(Helpers.getMail())
-        Helpers.type('#email_address', Helpers.getMail())
-
+        return cy.get(email)
     }
 
     getPassword(){
-        // cy.get('#password').type('User@123')
-        Helpers.type('#password', 'User@123' )
+        return cy.get(password)
     }
 
     getConfirmPassword(){
-        // cy.get('#confirm_password').type('User@123')
-        Helpers.type('#confirm_password', 'User@123' )
+        return cy.get(confirmPassword)
     }
 
-    getbutton(){
-        // cy.get('.MuiButtonBase-root:eq(8)').click()
-        Helpers.click('.MuiButtonBase-root:eq(8)')
+    getRegister(){
+        return cy.get(register)
     }
+
+    getErrorMessage(){
+        return cy.get(errorMessage)
+    }
+
+    getErrorNumber(){
+        return cy.get(errorNumber)
+    }
+    
+
 }
-
-
-export const registerpage= new RegisterPage();
+export default PatientPage;

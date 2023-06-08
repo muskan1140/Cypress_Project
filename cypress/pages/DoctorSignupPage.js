@@ -1,25 +1,53 @@
-import helpers from "cypress/Helpers/functions"
-const Helpers = new helpers();
+const nameField = 'div #full_name'
+const gender ='div .MuiButtonBase-root:eq(5)'
+const mobileNum= 'div #mobile_number'
+const email='div #email_address'
+const password = 'div #password'
+const confirmPassword ='div #confirm_password'
+const register = 'div .MuiButtonBase-root:last'
+const errorEmail = 'div #email_address'
+const errorNumber = 'div #mobile_number'
 
-class RegisterPage{
 
-    getLoginin(){
-        Helpers.visible('.MuiButton-label:eq(0)')
-        Helpers.click('.MuiButton-label:eq(0)')
-    }
-
-    getSignin(){
-        Helpers.visible('.MuiTab-wrapper:eq(2)')
-        Helpers.click('.MuiTab-wrapper:eq(2)')
+class DoctorPage{
+    
+    getName(){
+        return cy.get(nameField)
     }
 
     getGender(){
-        Helpers.click('.MuiTypography-root:eq(3)')
+        return cy.get(gender)
     }
 
     getMobileNum(){
-        cy.get('#mobile_number').type(Helpers.getRandom(10))
+        return cy.get(mobileNum)
     }
+
+    getEmail(){
+        return cy.get(email)
+    }
+
+    getPassword(){
+        return cy.get(password)
+    }
+
+    getConfirmPassword(){
+        return cy.get(confirmPassword)
+    }
+
+    getRegister(){
+        return cy.get(register)
+    }
+
+    getErrorMessage(){
+        return cy.get(errorEmail)
+    }
+
+    getErrorNumber(){
+        return cy.get(errorNumber)
+    }
+    
+
 }
 
-export const registerpage= new RegisterPage();
+export default DoctorPage;

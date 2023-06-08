@@ -3,25 +3,15 @@ import {
     When,
     Then,
 } from "@badeball/cypress-cucumber-preprocessor";
-import { registerpage } from "@pages/DoctorSignupPage";
 
-When ('User clicks on "Doctor Sign up"', ()=> {
-    registerpage.getLoginin()
-});
+import DoctorPageObject from "cypress/PageObject/DoctorSignupPageObject";
+const doctorPage = new DoctorPageObject();
 
-Then ('doctor signup window occur',() => {
-    registerpage.getSignin()
-});
-
-// When ('User selects the {string} gender' , (string) =>{
-//     if(string == 'gender'){
-//         registerpage.getGender()
-//     }
-//     else {
-//         registerpage.getMobileNum()
-//     }
-// })
-
-// When('User enters the "Email" in Email input field', () => {
-//     registerpage.getEmail()
+// Then('User can view the  {string} message',(errorEmail)=>{
+//     doctorPage.getErrorMessage(errorEmail)
 // });
+
+// Then('User enters the {string} in mobile input field',(errorNumber)=>{
+//     doctorPage.getErrorNumber(errorNumber)
+// });
+
